@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Nextep Job Application Assistant",
+  "short_name": "Nextep Apply",
+  "description": "Nextep Apply helps you capture job postings, manage applications, and auto-fill forms efficiently.",
+  "version": "0.1.0",
+  "action": {
+    "default_title": "Nextep Apply",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "permissions": ["scripting", "tabs", "storage", "activeTab"],
+  "host_permissions": ["http://*/", "https://*/"],
+  "background": {
+    "service_worker": "background/serviceWorker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
