@@ -27,16 +27,16 @@ export default defineConfig({
         popup: resolve(__dirname, "popup.html"),
         options: resolve(__dirname, "options.html"),
         background: resolve(__dirname, "src/background/serviceWorker.ts"),
-        content: resolve(__dirname, "src/content/contentScript.ts"),
+        // content: resolve(__dirname, "src/content/contentScript.ts"),
       },
       output: {
         entryFileNames: (chunk) => {
           if (chunk.name === "background") {
             return "background/serviceWorker.js";
           }
-          if (chunk.name === "content") {
-            return "content/content.js";
-          }
+          // if (chunk.name === "content") {
+          //   return "content/content.js";
+          // }
           return "assets/[name].js";
         },
         chunkFileNames: "assets/[name]-[hash].js",
