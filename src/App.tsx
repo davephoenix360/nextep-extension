@@ -12,6 +12,7 @@ const EMPTY_PROFILE: UserProfile = {
   githubUrl: "",
 };
 
+
 function App() {
   const [profile, setProfile] = useState<UserProfile>(EMPTY_PROFILE);
   const [loading, setLoading] = useState<boolean>(true);
